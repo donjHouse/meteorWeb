@@ -1,0 +1,67 @@
+<template name="canada">
+  <div class="section no-pad-bot" id="index-banner" style="background-image: url('../img/canadaHouse.jpg'); background-repeat: no-repeat; background-size: cover">
+         <div class="container">
+             <h1 class="text_h center header cd-headline letters type">
+                 <span>Канад байшин</span><br>
+                 <!--<span><h5>-->
+                     <!--Манай компани канад технологийн хамгийн анхны-->
+
+                     <!--улсын 100 хүүхдийн цэцэрлэгийг урилгаар тендэрт-->
+
+                     <!--оролцон барьж байсан бөгөөд энэ технологийг монголд-->
+
+                     <!--нэвтрүүлсэн анхны 3 компаний нэг билээ. Бид Канадын-->
+
+                     <!--BPWооd компаны албан ёсны төлөөлөгч бөгөөд канадын-->
+
+                     <!--төрөл бүрийн модон материалыг захиалгаар нийлүүлэн-->
+
+                     <!--мөн барилгадаа ашиглаж байна. Канад барилгын бэхэлгээ-->
+
+                     <!--төмөрийг австралиас захиалан ашиглаж байна. Канад-->
+
+                     <!--барилга нь туршилтаар -45 градуст дулааны ямарч-->
+
+                     <!--алдагдалгүй байдаг. Канад технологийн байшингийн-->
+
+                     <!--үндсэн бүтцжд ордог материалуудын танилцуулая.-->
+                 <!--</h5></span>-->
+
+             </h1>
+         </div>
+     </div>
+         <div class="container">
+             <h3 class="center header text_h2">
+                 Бид танд Монголын нөхцөлд тохируулан сайжруулсан Канад технологийн модон карказан хийцтэй, эрүүл
+                 амьдралын үндэс болох
+                 <span class="span_h2">"КАНАД ХАУС"</span>
+                 -ыг санал болгож байна
+             </h3>
+         </div>
+         {{#if Template.subscriptionsReady}}
+           <div class="row">
+               {{#each canadas}}
+                 <div class="col s12 m6 l3">
+                   <div class="card">
+                     <div class="card-image waves-effect waves-block waves-light">
+                       <img class="activator" src="http://lorempixel.com/400/300">
+                     </div>
+                     <div class="card-content">
+                       <span class="card-title activator grey-text text-darken-4">{{turul.categoryName}}<i class="material-icons right">more_vert</i></span>
+                       <p><a href="/homeplans/post/{{_id}}">Дэлгэрэнгүй</a></p>
+                     </div>
+                     <div class="card-reveal">
+                       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                       <p>{{{tailbar}}}
+                         <p><a href="/homeplans/post/{{_id}}">Дэлгэрэнгүй</a></p>
+                       </p>
+                     </div>
+                   </div>
+                 </div>
+               {{/each}}
+           </div>
+         {{else}}
+           {{> spinner}}
+
+         {{/if}}
+</template>

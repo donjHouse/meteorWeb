@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "ROOT_URL": "http://www.donj-house.com",
+       "MONGO_URL": "mongodb://tuguldur:123456@ds159237.mlab.com:59237/meteor"
+     }
+   }
+}

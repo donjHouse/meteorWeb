@@ -1,0 +1,42 @@
+<template name="engiin">
+  <div class="section no-pad-bot" id="index-banner" style="background-image: url('../img/engiinHouse.jpg'); background-repeat: no-repeat; background-size: cover">
+          <div class="container">
+              <h1 class="text_h center header cd-headline letters type">
+                  <span>Энгийн хаус</span><br>
+              </h1>
+          </div>
+      </div>
+      <div class="container">
+          <h3 class="center header text_h2">
+              Бид танд 38-51-н тоосгон өрөгт болон балкан
+              <span class="span_h2">"ЭНГИЙН ХАУС"</span>
+              -ыг санал болгож байна
+          </h3>
+      </div>
+      {{#if Template.subscriptionsReady}}
+        <div class="row">
+            {{#each engiins}}
+              <div class="col s12 m6 l3">
+                <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="http://lorempixel.com/400/300">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{turul.categoryName}}<i class="material-icons right">more_vert</i></span>
+                    <p><a href="/homeplans/post/{{_id}}">Дэлгэрэнгүй</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                    <p>{{{tailbar}}}
+                      <p><a href="/homeplans/post/{{_id}}">Дэлгэрэнгүй</a></p>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+        </div>
+      {{else}}
+        {{> spinner}}
+
+      {{/if}}
+</template>

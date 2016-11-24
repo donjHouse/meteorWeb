@@ -1,0 +1,39 @@
+<template name="homeplansSingle">
+  <div class="row">
+    <div class="col s0 m2 l2">
+      <br>
+    </div>
+    {{#if Template.subscriptionsReady}}
+      {{#each homeplans}}
+    <div class="col s12 m8">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{zurag}}">
+          <span class="card-title">{{turul.categoryName}}</span>
+        </div>
+        <div class="card-content">
+          {{{content}}}
+        </div>
+      </div>
+    </div>
+
+    <div class="col s0 m2 l2">
+      <br>
+      <div class="row">
+         <div class="card blue-grey darken-1">
+           <div class="card-content white-text">
+             <p>Энэ хэсэг зөвхөн админуудад харагдана</p>
+           </div>
+           <div class="card-action">
+             <a href="#" class="delete">Устгах</a>
+             <a href="#">Засах</a>
+           </div>
+         </div>
+     </div>
+    </div>
+    {{/each}}
+
+    {{/if}}
+  </div>
+
+</template>

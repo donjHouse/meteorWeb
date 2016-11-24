@@ -1,0 +1,50 @@
+<template name="admin">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<div class="row">
+
+    {{#if currentUser}}
+      {{#if isInRole 'admin'}}
+        {{>adminHeseg}}
+
+      {{else}}
+          <h1 class="center header text_h2">Та энэ хэсэгт нэвтрэх эрхгүй!</h1>
+      {{/if}}
+    {{else}}
+      <div class="col s0 m1 l4"><br>
+      </div>
+
+      <div class="col s12 m10 l4">
+        {{> atForm}}
+      </div>
+
+      <div class="col s0 m1 l4"><br>
+      </div>
+    {{/if}}
+</div>
+</template>
+
+<template name="adminHeseg">
+  <div class="row">
+    <div class="col s12 m6 l6">
+      <h1 class="center">Админ хэсэг</h1>
+    </div>
+    <div class="col s12 m6 l6"><br>
+      <a href="/admin/blog" class="btn">Blog пост тохиргоо хэсэгт очих</a>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col s0 m2 l3">
+        <br>
+      </div>
+      <div class="col s12 m8 l6 card">
+          {{> quickForm collection="zagvaruud" id="insertPostForm" type="insert"}}
+      </div>
+      <div class="col s0 m2 l3">
+        <br>
+      </div>
+  </div>
+</template>
